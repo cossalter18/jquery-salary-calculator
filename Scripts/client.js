@@ -3,6 +3,8 @@ $(document).ready(readyNow)
 
 // emplty array to store out employees inputed by the user
 let employees = [];
+let monthlyTotal = 0;
+
 
 function readyNow() {
     console.log('JQUERY WORKING');
@@ -24,7 +26,11 @@ function addEmployee() {
     console.log('employeeToAdd', employeeToAdd)
     employees.push(employeeToAdd)
 
+    // monthlyTotal += Number('${employees[i].annualSalary}') / 12
+    // console.log('monthly total:');
+    // $('#monthlyExpense').empty().append(monthlyExpense)
 
+    
     //empty values
     $('#firstNameIn').val('')
     $('#lastNameIn').val('')
@@ -36,7 +42,6 @@ function addTable() {
     $('#tableHead').siblings().empty();
     for (let i = 0; i < employees.length; i++) {
         let employeesInfo = employees[i]
-
         $('#employeesInfo').append(`
         <tr>
         <td>${employeesInfo.firstName}</td>
@@ -46,6 +51,11 @@ function addTable() {
         <td>${employeesInfo.annualSalary}</td>
         </tr>
         `);
+
+        monthlyTotal += Number('${employees[i].annualSalaryIn}') / 12
+        console.log('monthly total:');
+        $('#monthlyExpenseOutput').append(monthlyExpenseOutput)
+
 
 
     }
