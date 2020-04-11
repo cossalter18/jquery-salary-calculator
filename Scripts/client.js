@@ -4,12 +4,8 @@ $(document).ready(readyNow)
 // emplty array to store out employees inputed by the user
 let employees = [];
 
-//this variable will store the inputed annual salarys
-let monthlyCost = 0;
-
-
 function readyNow() {
-    console.log('JQUERY UP IN THIS BITCH');
+    console.log('JQUERY WORKING');
     $('#addEmployeeButton').on('click', addEmployee);
     $('#addEmployeeButton').on('click', addTable);
 }
@@ -37,15 +33,20 @@ function addEmployee() {
     $('#annualSalaryIn').val('')
 }
 function addTable() {
-    $('#employeesData').empty();
+    $('#tableHead').siblings().empty();
     for (let i = 0; i < employees.length; i++) {
-        let employeesData = employees[i]
-        $('#employeesData').append(`
+        let employeesInfo = employees[i]
+
+        $('#employeesInfo').append(`
         <tr>
-        <td>${employeesData.firstName}</td>
-        <td>${employeesData.lastName}</td>
-        <td>${employeesData.employeeId}</td>
-        <td>${employeesData.jobTitle}</td>
-        <td>${employeesData.annualSalary}</td>
-        <td data-id="${i}"><button class=btn bt-sm btn-delete">Delete</button></td></tr>`);
-    }}
+        <td>${employeesInfo.firstName}</td>
+        <td>${employeesInfo.lastName}</td>
+        <td>${employeesInfo.employeeId}</td>
+        <td>${employeesInfo.jobTitle}</td>
+        <td>${employeesInfo.annualSalary}</td>
+        </tr>
+        `);
+
+
+    }
+}

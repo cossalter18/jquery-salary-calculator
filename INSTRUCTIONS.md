@@ -13,8 +13,9 @@ The application should have an input form that collects _employee first name, la
 
 [X] A 'Submit' button should collect the form information, 
 [X] store the information
-[] calculate monthly costs, 
-[] append information to the DOM and clear the input fields. 
+[X] append information to the DOM and clear the input fields. 
+[] calculate monthly costs
+
 
 Using the stored information, calculate monthly costs and append this to the to DOM. If the total monthly cost exceeds $20,000, add a red background color to the total monthly cost.
 
