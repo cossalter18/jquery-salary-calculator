@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JQUERY SALARY CALCULATOR</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="Vendor/jquery-3.4.1.min.js"></script>
+    <script src="Scripts/client.js"></script>
+    <link rel="stylesheet" href="/Users/mike/Prime/tier2/jquery-salary-calculator/Vendor/bootstrap.css">
+    <link rel="stylesheet" href="Styles/style.css">
+
+</head>
+
+<body class="container">
+    <header class="jumbotron">
+        <h1 align="center">SALARY CALCULATOR</h1>
+    </header>
+
+    <h4>Add Employee:</h4>
+    <input type="text" id="firstNameIn" placeholder="First Name">
+    <input type="text" id="lastNameIn" placeholder="Last Name">
+    <input type="number" id="employeeIdIn" placeholder="Employee ID">
+    <input type="text" id="jobTitleIn" placeholder="Job Title">
+    <input type="number" id="annualSalaryIn" placeholder="Annual Salary">
+    <button button id="addEmployeeButton" class="btn btn-primary">Add Employee</button>
+
+    <h3>List</h3>
+    <table id="employeesData" class="table">
+        <thead>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Annual Salary</th>
+            <th scope="col">Remove</th>
+        </thead>
+        <tbody class="employeesInfo">
+        </tbody>
+    </table>
+
+    <h5 class="monthlyExpense">Monthly Expense:</h5>
+</body>
+
+</html>
