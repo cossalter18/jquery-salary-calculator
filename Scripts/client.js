@@ -8,9 +8,10 @@ let monthlyTotal = 0;
 
 
 function readyNow() {
-    console.log('JQUERY WORKING');
+    //console.log('JQUERY WORKING');
     $('#addEmployeeButton').on('click', addEmployee);
     $('#addEmployeeButton').on('click', addTable);
+    $('#deleteButton').on('click', deleteEmployee);
 }
 
 function addEmployee() {
@@ -25,7 +26,7 @@ function addEmployee() {
         annualSalary: $('#annualSalaryIn').val()
     } //end employeeToAdd
 
-    console.log('employeeToAdd', employeeToAdd)
+    //console.log('employeeToAdd', employeeToAdd)
     employees.push(employeeToAdd)
 
     //empty values
@@ -46,6 +47,7 @@ function addTable() {
         <td>${employeesInfo.employeeId}</td>
         <td>${employeesInfo.jobTitle}</td>
         <td>${employeesInfo.annualSalary}</td>
+        <td data-id="${i}"><button button id="deleteButton" type="button" class="btn btn-danger">Delete</button></td></tr>
         </tr>
         `)
 
@@ -56,9 +58,15 @@ function addTable() {
         $('#monthlyExpense').append(" $", monthlyTotal);
 
         //create redbackground if we excced 20k
-        if(monthlyTotal > 20000){
+        if (monthlyTotal > 20000) {
             $('#monthlyExpense').addClass('red')
         }
-
     }
 }
+
+function deleteEmployee() {
+    console.log('in deleteEmployee');
+    
+    employess.pop();
+}
+
