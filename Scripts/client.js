@@ -6,6 +6,7 @@ let employees = [];
 let monthlyTotal = 0;
 
 
+
 function readyNow() {
     console.log('JQUERY WORKING');
     $('#addEmployeeButton').on('click', addEmployee);
@@ -23,14 +24,10 @@ function addEmployee() {
         jobTitle: $('#jobTitleIn').val(),
         annualSalary: $('#annualSalaryIn').val()
     } //end employeeToAdd
+
     console.log('employeeToAdd', employeeToAdd)
     employees.push(employeeToAdd)
 
-    // monthlyTotal += Number('${employees[i].annualSalary}') / 12
-    // console.log('monthly total:');
-    // $('#monthlyExpense').empty().append(monthlyExpense)
-
-    
     //empty values
     $('#firstNameIn').val('')
     $('#lastNameIn').val('')
@@ -50,13 +47,15 @@ function addTable() {
         <td>${employeesInfo.jobTitle}</td>
         <td>${employeesInfo.annualSalary}</td>
         </tr>
-        `);
-
-        monthlyTotal += Number('${employees[i].annualSalaryIn}') / 12
-        console.log('monthly total:');
-        $('#monthlyExpenseOutput').append(monthlyExpenseOutput)
-
-
-
+        `)
+        
+        //divide annual salary by 12 and append to the DOM
+        monthlyTotal += Number(`${employees[i].annualSalary}`) / 12;
+        console.log('monthly total:', monthlyTotal);
+        $('#monthlyExpense').append(monthlyTotal);
     }
 }
+
+
+let monthlySalaryEmployee = Math.round(employeeToAdd.salary / 12);
+    totalMonthlySalary += monthlySalaryEmployee;
