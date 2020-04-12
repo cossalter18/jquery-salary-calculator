@@ -48,14 +48,17 @@ function addTable() {
         <td>${employeesInfo.annualSalary}</td>
         </tr>
         `)
-        
+
         //divide annual salary by 12 and append to the DOM
-        monthlyTotal += Number(`${employees[i].annualSalary}`) / 12;
+        monthlyTotal += Math.trunc(`${employees[i].annualSalary}`) / 12;
         console.log('monthly total:', monthlyTotal);
-        $('#monthlyExpense').append(monthlyTotal);
+        $('#monthlyExpense').empty();
+        $('#monthlyExpense').append(" $", monthlyTotal);
+
+        //create redbackground if we excced 20k
+        if(monthlyTotal > 20000){
+            $('#monthlyExpense').addClass('red')
+        }
+
     }
 }
-
-
-let monthlySalaryEmployee = Math.round(employeeToAdd.salary / 12);
-    totalMonthlySalary += monthlySalaryEmployee;
