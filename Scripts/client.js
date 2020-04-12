@@ -63,7 +63,7 @@ function readyNow() {
         }
     }
 
-    // function deleteEmployee() {
+    // function deleteEmployee
 function deleteEmployee(){
     console.log('deleteEmployee');
     employees.pop()
